@@ -1,3 +1,10 @@
+/* Note:
+  #  if we just replace the question mark ( '?' ) with the previous char then it will be ok.
+  #  if '?' located int i = 0 position simply s[i] = '0';
+          because the string must be in non-descending order.
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -31,21 +38,21 @@ cin.tie(0); cout.tie(0);
 
       for(int i = 0; i<n;i++)
       {
-          if( s[i]=='?'  )
+          if( s[i]=='?'  )   // We find any '? ' char 
           {
               if (i == 0 )
               {
-                  s[i]='0';
+                  s[i]='0';   // if it is in first position then ? replaced with 0
               }
               else{
-                     s[i] = s[i-1];
+                     s[i] = s[i-1];  // or if position is > 0 then '?' will replaced with the previous char.
               }
 
           }
 
       }
 
-      cout<<s<<endl;
+      cout<<s<<endl; // printing the string
 
 
 
